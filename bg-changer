@@ -1,0 +1,7 @@
+#!/bin/bash
+
+curl -s "http://www.bing.com/HPImageArchive.aspx?mkt=en-US&format=xml&idx=0&n=1" -o /tmp/file.xml
+urlEnd=$(sed -n 's:.*<url>\(.*\)</url>.*:\1:p' /tmp/file.xml)
+curl "www.bing.com$urlEnd" -o /tmp/bg
+gsettings set org.gnome.desktop.background picture-uri file:///tmp/bg
+rm /tmp/file.xml

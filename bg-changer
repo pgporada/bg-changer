@@ -1,9 +1,9 @@
 #!/bin/bash
 
 curl -s "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" -o /tmp/iotd.rss
-urlImg=$(cat /tmp/iotd.rss | grep -o '<enclosure [^>]*>' | head -n 1 | sed -n 's/.*url="//p' | sed -n 's/" length.*//p')
+urlImg=$(grep -o '<enclosure [^>]*>' /tmp/iotd.rss | head -n 1 | sed -n 's/.*url="//p' | sed -n 's/" length.*//p')
 
-curl -s $urlImg -o /tmp/bg
+curl -s "$urlImg" -o /tmp/bg
 gsettings set org.gnome.desktop.background picture-uri file:///tmp/bg
 if [ "$?" == 0 ];then
 	notify-send "title" "BG successfully updated" -i gtk-dialog-info

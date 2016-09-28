@@ -1,13 +1,15 @@
 #!/bin/bash
 
-curl -s "http://www.bing.com/HPImageArchive.aspx?mkt=en-US&format=xml&idx=0&n=1" -o /tmp/file.xml
-urlEnd=$(sed -n 's:.*<url>\(.*\)</url>.*:\1:p' /tmp/file.xml)
-curl -s "www.bing.com$urlEnd" -o /tmp/bg
+curl -s "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" -o /tmp/iotd.rss
+urlImg=$(cat /tmp/iotd.rss | grep -o '<enclosure [^>]*>' | head -n 1 | sed -n 's/.*url="//p' | sed -n 's/" length.*//p')
+
+curl -s $urlImg -o /tmp/bg
 gsettings set org.gnome.desktop.background picture-uri file:///tmp/bg
 if [ "$?" == 0 ];then
 	notify-send "title" "BG successfully updated" -i gtk-dialog-info
 else
 	notify-send "title" "error" -i error
 fi
-rm /tmp/file.xml
+exit
+rm /tmp/file.html
 

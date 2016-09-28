@@ -1,2 +1,3 @@
-# bg-changer
-A script to change the background wallpaper based on the daily bing photo
+# bg-iotd-changer
+
+A simple shell script to set NASA Picture of the Day as Wallpaper of Ubuntu Gnome.

@@ -3,8 +3,11 @@
 curl -s "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" -o /tmp/iotd.rss
 urlImg=$(grep -o '<enclosure [^>]*>' /tmp/iotd.rss | head -n 1 | sed -n 's/.*url="//p' | sed -n 's/" length.*//p')
 
-curl -s "$urlImg" -o /tmp/bg
-gsettings set org.gnome.desktop.background picture-uri file:///tmp/bg
+mkdir /home/"$USER"/Pictures/BG-CHANGER
+pathImg="/home/$USER/Pictures/BG-CHANGER/$(echo "$urlImg" | sed 's/.*\///')"
+
+curl -s "$urlImg" -o "$pathImg"
+gsettings set org.gnome.desktop.background picture-uri file://"$pathImg"
 if [ "$?" == 0 ];then
 	notify-send "title" "BG successfully updated" -i gtk-dialog-info
 else

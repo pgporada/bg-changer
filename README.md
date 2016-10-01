@@ -6,6 +6,11 @@ A shell script to set NASA Picture of the Day as Wallpaper of Ubuntu with Gnome 
 
 # USAGE 
 
+To execute the script, please type `$ bash bg-changer` or simply `$ ./bg-changer`.
+
+To set the script to run daily, please follow those steps : 
+ * s
+ * s   
 
 
 # Why this script again

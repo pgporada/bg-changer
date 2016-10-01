@@ -1,6 +1,6 @@
 # Project Overview : BG-Changer
 
-![](https://raw.githubusercontent.com/OSryx/bg-changer/master/rocket.svg)
+![](https://raw.githubusercontent.com/OSryx/bg-changer/master/rocket.png)
 A shell script to set NASA Picture of the Day as Wallpaper of Ubuntu with Gnome Shell or Unity Desktop Environment.
  
 

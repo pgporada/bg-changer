@@ -5,15 +5,21 @@ A shell script to set NASA Picture of the Day as Wallpaper for Ubuntu.
 
 # USAGE 
 
-First, you need to download the script, I suggest you position in an appropriate directory, then do this : 
+First, you need to download the script, I suggest you position in an appropriate directory, then do this :
+
 `git clone https://github.com/OSryx/bg-changer.git bg-changer`
 
 To install the script, you need to type :
+
 `cd bg-changer` and then `make install`
 
-To execute the script, please type `$ bash bg-changer` or simply `$ ./bg-changer`.
+To execute the script, please type :
 
-In case you don't like the script you can remove it, using the following command: `make remove`
+`$ bash bg-changer` or simply `$ ./bg-changer`.
+
+In case you don't like the script you can remove it, using the following command: 
+
+`make remove`
 
 # Why this script
 

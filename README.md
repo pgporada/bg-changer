@@ -11,15 +11,15 @@ First, you need to download the script, I suggest you position in an appropriate
 
 To install the script, you need to type :
 
-`cd bg-changer` and then `make install`
+`cd bg-changer` and then `sudo make install`
 
 To execute the script, please type :
 
-`$ bash bg-changer` or simply `$ ./bg-changer`.
+`$ bash bg-changer` or simply `$ bg-changer`.
 
 In case you don't like the script you can remove it, using the following command: 
 
-`make remove`
+`sudo make remove`
 
 # Why this script
 

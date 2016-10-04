@@ -1,8 +1,8 @@
 .PHONY: install remove
 
 install: bg-changer
-	cp -f bg-changer /usr/bin
+	cp -f bg-changer /usr/local/bin
 
 
-remove: /usr/bin/bg-changer
-	rm -f /usr/bin/bg-changer
+remove: /usr/local/bin/bg-changer
+	rm -f /usr/local/bin/bg-changer

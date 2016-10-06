@@ -1,24 +1,32 @@
 #!/bin/bash
 
+# Download the RSS feed of Nasa Daily Images
 curl -s "http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" -o /tmp/iotd.rss
 
+# Extract the latest Image URL
 urlImg=$(grep -o '<enclosure [^>]*>' /tmp/iotd.rss | head -n 1 | sed -n 's/.*url="//p' | sed -n 's/" length.*//p')
+
+# Check the existence of the Directory where to store the Images
 if [ ! -e /home/"$USER"/Pictures/BG-CHANGER ]; then
 	mkdir /home/"$USER"/Pictures/BG-CHANGER
 fi
 
+# Extract the Name of the latest Image
 nameImg=$(echo "$urlImg" | sed 's/.*\///')
+
+# If not already downloaded, Download the latest Nasa Image
 pathImg="/home/$USER/Pictures/BG-CHANGER/$nameImg"
 if [ ! -e  "$pathImg" ]; then
 	curl -s "$urlImg" -o "$pathImg"
 fi
 
+# Set the latest Image as a Desktop Background
 gsettings set org.gnome.desktop.background picture-uri file://"$pathImg"
 if [ "$?" == 0 ];then
-	notify-send "title" "BG successfully updated" -i gtk-dialog-info
+	notify-send "Desktop Background successfully updated" -i gtk-dialog-info
 else
-	notify-send "title" "error" -i error
+	notify-send "There was an error, unable to set the desktop background" -i error
 fi
 
+# Remove unnecessary files
 rm /tmp/iotd.rss
-

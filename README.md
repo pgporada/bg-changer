@@ -13,6 +13,8 @@ To install the script, you need to type :
 
 `cd bg-changer` and then `sudo make install`
 
+Or you can set the script to execute daily (at 6 p.m) by typing : `sudo make daily`
+
 To execute the script, please type :
 
 `$ bash bg-changer` or simply `$ bg-changer`.

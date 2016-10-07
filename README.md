@@ -25,6 +25,6 @@ In case you don't like the script you can remove it, using the following command
 
 # Why this script
 
-There is plenty of uncompleted scripts on the net that do the same thing but they are incomplete, deprecated, poorly documented or simply not available in shell scripting.
+There is plenty of incompleted scripts on the net that do the same thing but they are either deprecated or poorly documented or simply not available in shell scripting.
 
-This repository will maintain bg-changer shell script for Bash.
+This repository will maintain *bg-changer* shell script for Bash under Ubuntu.

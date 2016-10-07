@@ -23,9 +23,9 @@ fi
 # Set the latest Image as a Desktop Background
 gsettings set org.gnome.desktop.background picture-uri file://"$pathImg"
 if [ "$?" == 0 ];then
-	notify-send "Desktop Background successfully updated" -i gtk-dialog-info
+	notify-send "Info:" "Desktop Background successfully updated" -i dialog-information
 else
-	notify-send "There was an error, unable to set the desktop background" -i error
+	notify-send "Error:" "There was an error, unable to set the desktop background" -i error
 fi
 
 # Remove unnecessary files

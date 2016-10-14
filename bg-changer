@@ -21,7 +21,8 @@ if [ -e /tmp/iotd.rss ]; then
 	# Set the latest Image as a Desktop Background
 	if [ -n "$nameImg" ]; then
 		gsettings set org.gnome.desktop.background picture-uri file://"$pathImg"
-		notify-send "Desktop Background successfully updated to the image $nameImg" -i dialog-information
+		descImg=$(grep '</title>$' /tmp/iotd.rss | grep '<item> <title>' | head -n 1 | sed -n 's/ <item> <title>*//p' | sed -n 's/<\/title>*//p')
+		notify-send "Desktop Background successfully updated to the image : \"$descImg\"" -i dialog-information
 	else
 		notify-send "Error:" "There was an error, unable to set the desktop background" -i error
 	fi

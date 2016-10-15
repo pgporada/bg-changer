@@ -1,0 +1,8 @@
+Package: bg-changer
+Version: 0.3.2-1
+Section: misc
+Priority: optional
+Architecture: all
+Maintainer: ALJI Mohamed <mr.m.alji@gmail.com>
+Description: BG-Changer
+ A simple shell script to set NASA Picture of the Day as Wallpaper for Ubuntu.

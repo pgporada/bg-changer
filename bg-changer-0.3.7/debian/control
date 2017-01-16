@@ -10,6 +10,6 @@ Homepage: https://github.com/OSryx/bg-changer
 
 Package: bg-changer
 Architecture: all
-Depends: curl, ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: curl, ${shlibs:Depends}, ${misc:Depends}
 Description: BG Changer for Ubuntu 
  A simple shell script to set NASA Picture of the Day as Wallpaper for Ubuntu.
